@@ -1,0 +1,268 @@
+body
+{
+  font-size: 16px;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+.container
+{
+  width: 1150px;
+  padding: 0 25px;
+  margin: 0 auto;
+  background-color: #849d8f;
+  /*Переключаем фон слайдера через блок контейнера*/
+}
+
+
+.clearfix::after
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main-header
+{
+  width: 1150px;
+}
+
+.main-logo
+{
+  width: 160px; */ Согласно размерам логотипа */
+  height: 50px;
+  padding-top: 10px;
+  float: left;
+
+}
+.main-navigation
+{
+  min-width: 384px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 11px;
+  float: left;
+}
+.main-navigation .navigation-list
+{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+}
+.navigation-list li
+{
+ display: inline-block;
+ padding: 10px 12px;
+ margin-right: 25px;
+ vertical-align: top;
+ font-size: 16px;
+ font-weight: bold;
+ color: #fff;
+ cursor: pointer;
+
+}
+
+.navigation-list li a
+{
+  text-decoration: none;
+  border-bottom: 1px solid #adbdb4;
+  color: #fff;
+}
+
+.navigation-list li:hover > a,
+.navigation-list li:hover
+{
+ border: none;
+ border-radius: 20px;
+ background-color: #fff;
+ color: #000;
+}
+.navigation-list li:active
+{
+  box-shadow: inset 0 2px 1px 0 #696969;
+}
+
+.navigation-list li:last-child
+{
+  margin: 0;
+}
+.user-block
+{
+  width: 269px;
+  float: right;
+
+}
+.user-block a
+{
+  display:inline-block;
+  margin-right: 10px;
+  vertical-align: top;
+  font-size: 14px;
+
+}
+
+.actions
+{
+  margin-bottom: 39px;
+}
+.actions .action1
+{
+  width: 562px;
+  margin-right: 26px;
+  float: left;
+}
+.actions .action2
+{
+  width: 562px;
+  float: right;
+}
+.products
+{
+  font-size: 0;
+  margin-bottom: 35px;
+}
+.product
+{
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: 268px;
+  margin-right: 26px;
+  font-size: 16px;
+}
+
+.product.product4
+{
+  margin-right: 0;
+}
+
+.product .image
+{
+  width: 266px;
+  height: 266px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.product .price
+{
+  position: absolute;
+  top: 205px;
+  left: 0;
+  margin: 0;
+  font-weight: bold;
+  font-size: 35px;
+  color: #fff;
+
+}
+
+.product p
+{
+  margin: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.about-us
+{
+  padding: 25px 22px;
+  margin-bottom: 38px;
+  background-color: #fff;
+}
+.about-us .about-us-title
+{
+  font-size: 24px;
+  line-height: 30px;
+}
+.about-us .advantages
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+.advantages li:nth-child(2n-1)
+{
+  margin-right: 26px;
+}
+
+.advantages li
+{
+  display: inline-block;
+  vertical-align: top;
+  width: 490px;
+  margin-bottom: 22px;
+  padding-left: 50px;
+  font-size: 16px;
+}
+
+.gllacy-news
+{
+  padding-bottom: 40px;
+}
+.gllacy-news .new-articles
+{
+  width: 286px;
+  padding: 25px 255px 83px 22px;
+  float: left;
+  background-color: #fff;
+}
+.new-articles .article-title
+{
+  margin-top: 0;
+  margin-bottom: 11px;
+  line-height: 22px;
+  font-size: 16px;
+}
+.new-articles a
+{
+  font-size: 24px;
+  line-height: 30px;
+  color: #000;
+}
+.gllacy-news .email-messages
+{
+  width: 506px;
+  padding: 35px 27px;
+  padding-bottom: 40px;
+  float: right;
+  background-color: #fff;
+}
+.email-messages .invitation
+{
+  line-height: 22px;
+}
+.invitation input
+{
+  margin-top: 35px;
+  margin-right: 8px;
+}
+.map
+{
+  margin-bottom: 38px;
+}
+
+.footer-social
+{
+  width: 200px;
+  margin-right: 95px;
+  float: left;
+}
+
+.footer-documents
+{
+  width: 328px;
+  margin: 0;
+  margin-right: 26px;
+  padding-left: 106px;
+  padding-right: 126px;
+  float: left;
+  list-style: none;
+}
+
+.footer-copyright
+{
+  width: 192px;
+  padding-left: 77px;
+  float: right;
+}
