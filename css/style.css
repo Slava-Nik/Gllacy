@@ -273,9 +273,10 @@ body
   font-weight: bold;
   color: #fff;
 }
-.action .btn
+
+.btn
 {
-  padding: 11px 21px;
+  padding: 12px 18px;
   border-radius: 20px;
   line-height: 24px;
   font-size: 18px;
@@ -285,6 +286,11 @@ body
   background-image: linear-gradient(to bottom, #f26843, #ca3824);
   word-wrap: normal;
 
+}
+
+.action .btn
+{
+  padding: 11px 21px;
 }
 .action1 .btn
 {
@@ -349,12 +355,15 @@ body
 
 .about-us
 {
-  padding: 25px 22px;
+  padding: 27px 22px;
   margin-bottom: 38px;
-  background-color: #fff;
+  border-radius: 10px;
+  background: url("../img/wafer-pattern.jpg") repeat;
 }
 .about-us .about-us-title
 {
+  margin: 0;
+  margin-bottom: 24px;
   font-size: 24px;
   line-height: 30px;
 }
@@ -365,19 +374,63 @@ body
   padding: 0;
   font-size: 0;
 }
-.advantages li:nth-child(2n-1)
+ .about-us-item:nth-child(2n-1)
 {
   margin-right: 26px;
 }
 
-.advantages li
+
+.advantages .about-us-item
 {
   display: inline-block;
   vertical-align: top;
   width: 490px;
+  position: relative;
   margin-bottom: 22px;
   padding-left: 50px;
   font-size: 16px;
+}
+
+.about-us-item:nth-child(n+3)
+{
+  margin-bottom: 0;
+}
+.about-us-item p
+{
+  margin: 0;
+  line-height: 22px;
+}
+
+.about-us-item::before
+{
+  content: " ";
+  display: block;
+  width: 49px;
+  height: 49px;
+  position: absolute;
+  top: -9px;
+  left: -5px;
+  background: url("../img/sprite.png") no-repeat;
+}
+
+.about-us-item.icon1::before
+{
+  background-position: -134px -95px;
+}
+
+.about-us-item.icon2::before
+{
+  background-position: -76px -95px;
+}
+
+.about-us-item.icon3::before
+{
+  background-position: -196px -5px;;
+}
+
+.about-us-item.icon4::before
+{
+  background-position: -194px -64px;;
 }
 
 .gllacy-news
@@ -387,14 +440,15 @@ body
 .gllacy-news .new-articles
 {
   width: 286px;
-  padding: 25px 255px 83px 22px;
+  padding: 24px 253px 74px 21px;
   float: left;
-  background-color: #fff;
+  border-radius: 17px;
+  background: #fff url("../img/strawberry-bg.jpg") no-repeat ;
 }
 .new-articles .article-title
 {
   margin-top: 0;
-  margin-bottom: 11px;
+  margin-bottom: 10px;
   line-height: 22px;
   font-size: 16px;
 }
@@ -402,25 +456,49 @@ body
 {
   font-size: 24px;
   line-height: 30px;
+  font-weight: bold;
   color: #000;
 }
-.gllacy-news .email-messages
+
+.post-wrap
 {
-  width: 506px;
-  padding: 35px 27px;
-  padding-bottom: 40px;
+  width: 550px;
+  padding: 6px 6px;
   float: right;
+  border-radius: 15px;
+  background: #fff url("../img/post-pattern.jpg") repeat;
+}
+
+.email-messages
+{
+  padding: 30px 21px 34px 21px;
+  border-radius: 15px;
   background-color: #fff;
 }
+
+
 .email-messages .invitation
 {
   line-height: 22px;
 }
 .invitation input
 {
+  box-sizing: border-box;
+  width: 366px;
+  padding: 12px 15px;
   margin-top: 35px;
-  margin-right: 8px;
+  margin-right: 11px;
+  border: 2px solid #d3d3d2;
+  border-radius: 5px;
 }
+
+.email-messages input[type="submit"]
+{
+  outline: none;
+  border: none;
+  padding: 12px 18px;
+}
+
 .map
 {
   margin-bottom: 38px;
