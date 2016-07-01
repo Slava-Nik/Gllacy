@@ -1,3 +1,14 @@
+/*
+@font-face {
+  font-family: "Roboto";
+  src:
+  local("Roboto Regular"),
+  url(../fonts/web/roboto.woff) format("woff"),
+  url(../fonts/web/roboto.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}*/
+
 body
 {
   font-size: 16px;
@@ -86,36 +97,209 @@ body
 {
   margin: 0;
 }
+
 .user-block
 {
+  padding-top: 22px;
   width: 269px;
   float: right;
-
 }
+
+
 .user-block a
 {
   display:inline-block;
   margin-right: 10px;
   vertical-align: top;
   font-size: 14px;
+}
 
+.user-block .search
+{
+  width: 31px;
+  height: 31px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background: #a2b7ac url("../img/sprite.png") no-repeat -40px -116px;
+  font-size: 0;
+}
+.user-block .search:hover
+{
+  background-color: #fff;
+  background-position: -186px -116px;
+}
+
+.user-block .entrance
+{
+  width: 40px;
+  height: 18px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 44px;
+  padding-right: 7px;
+  position: relative;
+  border-radius: 19px;
+  background-color: #a2b7ac;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+.entrance::before
+{
+  content: "";
+  display: block;
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  top: 6px;
+  left: 15px;
+  background: url("../img/sprite.png") no-repeat -67px -5px;
+}
+.entrance:hover
+{
+  background-color: #fff;
+  color: #000;
+
+}
+.entrance:hover::before
+{
+  background-position: -98px -5px;
+}
+
+.user-block .bucket
+{
+  width: 66px;
+  height: 18px;
+  margin-right: 0px;
+  padding: 7px 7px 7px 44px;
+  position: relative;
+  border-radius: 19px;
+  background-color: #a2b7ac;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+
+}
+
+.bucket::before
+{
+  content: "";
+  display: block;
+  width: 21px;
+  height: 20px;
+  position: absolute;
+  top: 6px;
+  left: 15px;
+  background: url("../img/sprite.png") no-repeat -5px -5px;
+}
+
+.bucket:hover
+{
+  background-color: #fff;
+  color: #000;
+
+}
+.bucket:hover::before
+{
+  background-position: -36px -5px;
+}
+
+.contacts
+{
+  margin-left: 98px;
+  font-weight: bold;
+  color: #fff;
+  text-align: right;
+}
+
+.contacts .working-time
+{
+  margin: 0;
+  padding-top: 19px;
+  font-size: 14px;
+  line-height: 16px;
+
+}
+.contacts .phone-number
+{
+  margin: 0;
+  padding-top: 7px;
+  font-size: 22px;
+  line-height: 24px;
 }
 
 .actions
 {
   margin-bottom: 39px;
 }
+
+.actions .action
+{
+  position: relative;
+  width: 520px;
+  min-height: 177px;
+  padding: 20px;
+  padding-bottom: 32px;
+  border-radius: 20px;
+  overflow: hidden;
+
+}
 .actions .action1
 {
-  width: 562px;
-  margin-right: 26px;
   float: left;
+  background: url("../img/raspberry.jpg") repeat;
 }
 .actions .action2
 {
-  width: 562px;
   float: right;
+  background:  url("../img/chocolate.jpg") repeat;
 }
+
+.action .action-title
+{
+  margin: 0;
+  margin-bottom: 18px;
+  line-height: 41px;
+  font-size: 35px;
+  font-weight: bold;
+  color: #fff;
+}
+.action .action-content
+{
+  margin: 0;
+  margin-bottom: 50px;
+  line-height: 22px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+.action .btn
+{
+  padding: 11px 21px;
+  border-radius: 20px;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, #f26843, #ca3824);
+  word-wrap: normal;
+
+}
+.action1 .btn
+{
+  position: absolute;
+  right: 22px;
+  bottom: 17px;
+}
+.action2 .btn
+{
+  position: absolute;
+  right: 22px;
+  bottom: 17px;
+}
+
+
 .products
 {
   font-size: 0;
