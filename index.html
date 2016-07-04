@@ -122,7 +122,7 @@
 </main>
 
 <div class="map">
-  <img src="img/map.jpg" width="1200" height="430">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1998.6010499565464!2d30.3218817!3d59.9387619!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1467663394252" width="1200" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
   <section class="adress-block">
     <h3 class="adress-title">Адрес главного офиса и офлайн магазина:</h3>
     <strong>ул. Большая Конюшенная 19/8, Санкт-Петербург</strong>
@@ -132,6 +132,15 @@
     <a class="btn" href="#">Форма обратной связи</a>
   </section>
 </div>
+
+<form class="form-feedback hidden" action="#" method="post">
+  <h2 class="feedback-title">Мы обязательно вам ответим!</h2>
+  <input type="text" class="user-name" placeholder="Как вас зовут?">
+  <input type="email" class="user-email" placeholder="Ваша почта для ответа?">
+  <textarea placeholder="Напишите что-нибудь..."></textarea>
+  <input type="submit" class="btn" value="Отправить">
+  <div class="form-close"></div>
+</form>
 
 <footer class="main-footer clearfix">
   <div class="footer-social">
@@ -151,6 +160,7 @@
     <p class="copyright-content">Сделано в <a href="https://htmlacademy.ru"><span>HTML Academy</span></a> © 2016</p>
   </div>
 </footer>
+<div class="overlay hidden"></div>
 </div>
 <script src="js/script.js"></script>
 </body>

@@ -26,6 +26,8 @@ body
   width:1150px;
   padding: 0 25px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;  /* Свойство необходимо для overlay-я*/
 }
 
 .background-slide1
@@ -42,6 +44,17 @@ body
 {
   background: #9d8b84 url("../img/slider/ice-cream3.png") no-repeat;
   background-position: 64px 0;
+}
+
+.overlay
+{
+  width: 1200px;
+  height: 3500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 50;
 }
 
 .btn
@@ -66,6 +79,14 @@ body
 {
   background-image: linear-gradient(to bottom, #f26843, #e74a35);
   box-shadow: inset 0 2px 2px 0 #942718;
+}
+
+input[type="submit"]
+{
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 12px 18px;
 }
 
 .main-logo
@@ -625,21 +646,14 @@ input[value="toogle3"]:checked+label[for="toogle3"]
   border-radius: 5px;
 }
 
-.email-messages input[type="submit"]
-{
-  display: inline-block;
-  outline: none;
-  border: none;
-  padding: 12px 18px;
-}
-
 .map
 {
   width: 1200;
-  min-height: 430px;
+  height: 430px;
   margin-bottom: 36px;
   position: relative;
   overflow:  hidden;
+  background-image: url("../img/map.jpg");
 }
 .adress-block
 {
@@ -690,6 +704,93 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 {
   display: inline-block;
   padding: 12px 25px;
+}
+
+.form-feedback
+{
+  width: 435px;
+  padding: 19px 25px;
+  position: absolute;
+  top: 340px;
+  left: 363px;
+  border-radius: 10px;
+  background-color: #fff;
+  z-index: 500;
+}
+
+.feedback-title
+{
+  margin: 0;
+  margin-bottom: 23px;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.form-feedback input:not(:last-of-type),
+.form-feedback textarea
+{
+  box-sizing: border-box;
+  padding: 12px 15px;
+  border: 2px solid #d3d3d2;
+  border-radius: 5px;
+}
+.form-feedback input:not(:last-of-type)
+{
+  width: 270px;
+  margin-bottom: 20px;
+}
+.form-feedback textarea
+{
+  width: 430px;
+  height: 155px;
+  margin-bottom: 25px;
+  resize: none;
+}
+.form-feedback input[type="submit"]
+{
+  float: right;
+}
+.form-feedback .form-close
+{
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.form-close::before,
+.form-close::after
+{
+  content: "";
+  width: 19px;
+  height: 2px;
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  background-color: #000;
+
+}
+.form-close::before
+{
+  transform: rotate(45deg);
+}
+.form-close::after
+{
+  transform: rotate(-45deg);
+}
+.form-close:hover
+{
+  background-color: #000;
+}
+.form-close:active
+{
+  opacity: 0.5;
+}
+.form-close:hover::before,
+.form-close:hover::after
+{
+  background-color: #fff;
+  height: 3px;
 }
 
 .main-footer
