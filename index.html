@@ -9,7 +9,8 @@
 </head>
 <body>
 
-  <header class="main-header container">
+<div class=" container background-slide1">
+  <header class="main-header">
     <div class="header-top clearfix">
       <div class="main-logo">
         <img src="img/main-logo.svg" alt="Gllacy-Shop" width="153" height="63">
@@ -31,29 +32,33 @@
         </div>
       </div>
     </div>
+  </header>
 
+  <div class="slider clearfix">
     <div class="slider-toggles">
       <input type="radio" name="slider" value="toogle1" id="toogle1" checked>
-      <input type="radio" name="slider" value="toogle2" id="toogle2">
-      <input type="radio" name="slider" value="toogle3" id="toogle3">
       <label for="toogle1"></label>
+      <input type="radio" name="slider" value="toogle2" id="toogle2">
       <label for="toogle2"></label>
+      <input type="radio" name="slider" value="toogle3" id="toogle3">
       <label for="toogle3"></label>
     </div>
-    <div class="slider-item1">
+
+    <div class="slider-item slide1">
       <p>Крем-брюле и пломбир с малиновым джемом</p>
     </div>
-    <div class="slider-item2">
-      <p>Шоколадный пломбир и лимонный сорбет</p>
+      <div class="slider-item slide2 hidden">
+        <p>Шоколадный пломбир и лимонный сорбет</p>
+      </div>
+      <div class="slider-item slide3 hidden">
+        <p>Пломбир с помадкой и клубничный щербет</p>
+      </div>
+      <a href="#" class="slider-btn btn">Давайте оба!</a>
     </div>
-    <div class="slider-item3">
-      <p>Пломбир с помадкой и клубничный щербет</p>
-    </div>
-    <a href="#" class="btn">Давайте оба!</a>
 
-</header>
 
-<main class="container">
+
+<main>
   <div class="actions clearfix">
     <div class="action action1">
       <h2 class="action-title">Малинка даром!</h2>
@@ -70,23 +75,23 @@
   <section class="products">
     <div class="product product1">
       <div class="image"><img src="img/products/prod1.jpg" alt="Тропическое мороженное"></div>
-      <h2 class="price">310 Р/кг</h2>
-      <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+      <h2 class="price">310<span>/кг</span></h2>
+      <p class="product-title"><span>Сливочное с апельсиновым джемом и цитрусовой стружкой</span></p>
     </div>
     <div class="product product2">
       <div class="image"><img src="img/products/prod2.jpg" alt="Аппетитное кофейное мороженное"></div>
-      <h2 class="price">380 Р/кг</h2>
-      <p>Сливочно-кофейное с кусочками шоколада</p>
+      <h2 class="price">380<span>/кг</span></h2>
+      <p class="product-title"><span>Сливочно-кофейное с кусочками шоколада</span></p>
     </div>
     <div class="product product3">
       <div class="image"><img src="img/products/prod3.jpg" alt="Гламурно-розовое ice-cream"></div>
-      <h2 class="price">355 Р/кг</h2>
-      <p>Сливочно-клубничное с присыпкой из белого шоколада</p>
+      <h2 class="price">355<span>/кг</span></h2>
+      <p class="product-title"><span>Сливочно-клубничное с присыпкой из белого шоколада</span></p>
     </div>
     <div class="product product4">
       <div class="image"><img src="img/products/prod4.jpg" alt="Охлаждающее сливочное крем-брюле"></div>
-      <h2 class="price">415 Р/кг</h2>
-      <p>Сливочное крем-брюле с карамельной подливкой</p>
+      <h2 class="price">415<span>/кг</span></h2>
+      <p class="product-title"><span>Сливочное крем-брюле с карамельной подливкой</span></p>
     </div>
   </section>
 
@@ -105,7 +110,7 @@
       <h3 class="article-title">Новое в нашем блоге</h3>
       <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
     </div>
-    <div class="post-wrap">
+    <div class="form-wrap">
     <form class="email-messages" action="#" method="post">
       <label class="invitation">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)
         <input type="email" placeholder="Электронная почта">
@@ -117,17 +122,18 @@
 </main>
 
 <div class="map">
-  <section class="adress">
+  <img src="img/map.jpg" width="1200" height="430">
+  <section class="adress-block">
     <h3 class="adress-title">Адрес главного офиса и офлайн магазина:</h3>
     <strong>ул. Большая Конюшенная 19/8, Санкт-Петербург</strong>
-    <h3 class="adress-phone">Для заказов по телефону:</h3>
-    <strong>8 812 450-25-25</strong>
-    <b>(с 10 до 20 ежедневно)</b>
+    <h3 class="adress-contacts">Для заказов по телефону:</h3>
+    <p class="phone">8 812 450-25-25</p>
+    <p class="time">(с 10 до 20 ежедневно)</p>
     <a class="btn" href="#">Форма обратной связи</a>
   </section>
 </div>
 
-<footer class="main-footer container clearfix">
+<footer class="main-footer clearfix">
   <div class="footer-social">
     <a href="https://twitter.com" class="twitter" target="-blank">Twitter</a>
     <a href="https://www.instagram.com" class="instagramm" target="-blank">Instagramm</a>
@@ -145,6 +151,7 @@
     <p class="copyright-content">Сделано в <a href="https://htmlacademy.ru"><span>HTML Academy</span></a> © 2016</p>
   </div>
 </footer>
-
+</div>
+<script src="js/script.js"></script>
 </body>
 </html>
