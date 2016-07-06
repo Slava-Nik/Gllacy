@@ -117,12 +117,11 @@ input[type="submit"]
  display: inline-block;
  padding: 10px 12px;
  margin-right: 25px;
+ position: relative;
  vertical-align: top;
  font-size: 16px;
  font-weight: bold;
- color: #fff;
  cursor: pointer;
-
 }
 
 .navigation-list li a
@@ -150,14 +149,83 @@ input[type="submit"]
   margin: 0;
 }
 
+.catalog .catalog-menu
+{
+  display: none;
+  min-width: 137px;
+  padding: 11px 0;
+  padding-bottom: 7px;
+  position: absolute;
+  top: 40px;
+  left: -3px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 20px 20px 1px rgba(0,0,0,0.4);
+  color: #000!important;
+}
+.catalog-menu li
+{
+  min-width: 105px;
+  margin: 0;
+  padding: 0;
+  line-height: 16px;
+  font-size: 14px;
+  margin-bottom: 11px;
+}
+
+.catalog-menu li:first-child
+{
+  width: 114px;
+  margin-left: 7px;
+  margin-bottom: 4px;
+  padding-left: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #d1d0ce;
+}
+.catalog-menu li:nth-child(n+2)
+{
+  padding: 7px 0;
+  padding-left: 21px;
+  padding-right: 21px;
+  font-weight: normal;
+}
+.catalog:hover .catalog-menu
+{
+  display: block;
+}
+.catalog-menu li:hover,
+.catalog-menu li:active
+
+{
+  box-shadow: none;
+  border-radius: 0;
+}
+.catalog-menu li:nth-child(n+2):hover
+{
+  background-color: #fbded7;
+}
+.catalog-menu li:nth-child(n+2):active
+{
+  background-color: #f6b5a5;
+}
+
 .user-block
 {
   padding-top: 22px;
   width: 269px;
   float: right;
+  position: relative;
 }
 
-.user-block a
+
+.user-tools
+{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.user-tools li
 {
   display:inline-block;
   margin-right: 10px;
@@ -165,8 +233,13 @@ input[type="submit"]
   font-size: 14px;
 }
 
-.user-block .search
+.user-tools .tool-bucket
 {
+  margin-right: 0;
+}
+.tool-search
+{
+  display: block;
   width: 31px;
   height: 31px;
   margin-left: 5px;
@@ -174,14 +247,59 @@ input[type="submit"]
   background: rgba(255,255,255,0.2) url("../img/sprite.png") no-repeat -40px -116px;
   font-size: 0;
 }
-.user-block .search:hover
+.tool-search .search
+{
+  font-size: 0;
+}
+.tool-search:hover
 {
   background-color: #fff;
   background-position: -186px -116px;
 }
 
-.user-block .entrance
+
+.tool-search .form-search
 {
+  display: none;
+  padding: 20px 15px;
+  position: absolute;
+  top: 54px;
+  left: -307px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 20px 20px 0px rgba(0,0,0,0.4);
+}
+
+.tool-search:hover .form-search
+{
+  display: block;
+}
+
+.form-search input
+{
+
+  box-sizing: border-box;
+  width: 311px;
+  height: 44px;
+  padding: 12px 15px;
+  border: 1px solid #d3d3d2;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.user-tools .form-search label
+{
+  top: 3px;
+  left: 31px;
+}
+.form-search input:active label
+{
+  opacity: 1;
+}
+
+
+.tool-enter
+{
+  display: block;
   width: 40px;
   min-height: 18px;
   padding-top: 7px;
@@ -195,7 +313,17 @@ input[type="submit"]
   color: #fff;
   font-size: 14px;
 }
-.entrance::before
+.tool-enter .entrance
+{
+  text-decoration: none;
+  color: #fff;
+}
+.tool-enter:hover .entrance
+{
+  color: #000;
+}
+
+.tool-enter::before
 {
   content: "";
   display: block;
@@ -206,19 +334,88 @@ input[type="submit"]
   left: 15px;
   background: url("../img/sprite.png") no-repeat -67px -5px;
 }
-.entrance:hover
+.tool-enter:hover
 {
   background-color: #fff;
   color: #000;
 
 }
-.entrance:hover::before
+.tool-enter:hover::before
 {
   background-position: -98px -5px;
 }
 
-.user-block .bucket
+.tool-enter .form-enter
 {
+  display: none;
+  width: 241px;
+  padding: 20px 17px 20px 19px;
+  position: absolute;
+  top: 33.5px;
+  left: -184px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 20px 20px 1px rgba(0,0,0,0.4);
+}
+
+.form-enter input
+{
+box-sizing: border-box;
+width: 241px;
+height: 44px;
+padding: 12px 15px;
+margin-bottom: 20px;
+margin-right: 9px;
+border: 1px solid #d3d3d2;
+border-radius: 5px;
+font-size: 14px;
+}
+.form-enter .btn
+{
+  margin-right: 20px;
+  float: left;
+}
+
+.form-enter .getting-password
+{
+  width: 130px;
+  float: right;
+  line-height: 24px;
+}
+.getting-password a
+{
+  color: #000;
+  font-size: 13px;
+}
+.getting-password a:hover
+{
+  color: #e84d37;
+}
+.getting-password a:active
+{
+  color: #ff4d37;
+}
+.form-enter label[for="email1"]
+{
+  top: 3px;
+  left: 35px;
+}
+.form-enter label[for="password"]
+{
+  top: 67px;
+  left: 35px;
+}
+.form-enter input:active label
+{
+  opacity: 1;
+}
+.tool-enter:hover .form-enter
+{
+  display: block;
+}
+.tool-bucket .bucket
+{
+  display: block;
   width: 66px;
   min-height: 18px;
   margin-right: 0px;
@@ -229,7 +426,6 @@ input[type="submit"]
   text-decoration: none;
   color: #fff;
   font-size: 14px;
-
 }
 
 .bucket::before
@@ -243,16 +439,164 @@ input[type="submit"]
   left: 15px;
   background: url("../img/sprite.png") no-repeat -5px -5px;
 }
+.bucket .full-bucket
+{
+  display: none;
+  font-weight: bold;
+}
 
-.bucket:hover
+.tool-bucket:hover .bucket
 {
   background-color: #fff;
   color: #000;
-
 }
-.bucket:hover::before
+.tool-bucket:hover .empty-bucket
+{
+  display: none;
+}
+.tool-bucket:hover .full-bucket
+{
+  display: block;
+}
+.tool-bucket:hover .bucket::before
 {
   background-position: -36px -5px;
+}
+
+.tool-bucket .making-order
+{
+  display: none;
+  width: 515px;
+  max-height: 415px;
+  padding: 20px 15px;
+  position: absolute;
+  top: 55px;
+  left: -280px;
+  border-radius: 8px;
+  box-shadow: 0 20px 20px 1px rgba(0,0,0,0.4);
+  background-color: #fff;
+  overflow-y: auto;
+}
+.tool-bucket:hover .making-order
+{
+  display: block;
+}
+
+.making-order .component
+{
+  width: 515px;
+  position: relative;
+  line-height: 16px;
+  font-size: 13px;
+  color: #323232;
+}
+
+.component-picture
+{
+  width: 33px;
+  height: 33px;
+  margin-left: 26px;
+  margin-right: 14px;
+  float: left;
+  position: relative;
+}
+.component-picture img
+{
+  transform: scale(0.12);
+  position: absolute;
+  top: -117px;
+  left: -117px;
+}
+.component .component-close
+{
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 10px;
+  left: 4px;
+}
+.component:nth-of-type(n+2) .component-close
+{
+  top: 30px;
+  left: 4px;
+}
+.component-close::before,
+.component-close::after
+{
+  content: "";
+  width: 12px;
+  height: 1px;
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  background-color: #323232;
+}
+.component-close:hover::before,
+.component-close:hover::after
+{
+  background-color: #fff;
+  height: 2px;
+}
+
+.component-name
+{
+  width: 225px;
+  padding-top: 8px;
+  padding-right: 23px;
+  float: left;
+  line-height: 16px;
+}
+
+.component-quantity
+{
+
+  box-sizing: border-box;
+  width: 115px;
+  padding-top: 8px;
+  padding-right: 12px;
+  float:left;
+}
+.component-quantity span
+{
+  color: #999;
+}
+.component-price
+{
+  max-width: 70px;
+  padding-top: 8px;
+  padding-left: 8px;
+  float: left;
+  word-wrap: break-word;
+}
+
+.component:nth-of-type(n+2)
+{
+  padding-top: 20px;
+}
+.component2
+{
+  padding-bottom: 16px;
+  border-bottom: 1px solid #cacac7;
+}
+
+.making-order .result-price
+{
+  max-width: 155px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 300px;
+  float: right;
+  line-height: 18px;
+  font-size: 15px;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.making-order a.btn
+{
+  float: right;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .contacts
@@ -298,11 +642,17 @@ input[type="submit"]
   margin-right: 8px;
   border-radius: 50%;
   border: 3px solid #fff;
+  cursor: pointer;
   }
 .slider-toggles label:last-child
 {
   margin: 0;
 }
+.slider-toggles label:hover
+{
+  background-color: rgba(255,255,255,0.4);
+}
+
 
 input[value="toogle1"]:checked+label[for="toogle1"]
 {
@@ -320,7 +670,6 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 .slider-item
 {
   display:inline-block;
-  /*min-width: 672px;*/
   text-align: center;
 
 }
@@ -433,6 +782,7 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 
 .products
 {
+  position: relative;
   font-size: 0;
   margin-bottom: 35px;
 }
@@ -472,12 +822,12 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 .product .price
 {
 
-  font-family: "Roboto Bold";
   position: absolute;
   top: 205px;
   left: 0;
-  margin: 0;
   font-size: 45px;
+  font-family: "Roboto Bold";
+  font-weight: bold;
   color: #fff;
 }
 .price span
@@ -505,6 +855,50 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 .product-title span
 {
   border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.product-hover
+{
+  opacity: 0;
+  width: 288px;
+  min-height: 400px;
+  position: absolute;
+  top: -10px;
+  left: -12px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.2);
+  z-index: 5;
+}
+.product-hover a.btn
+{
+
+  padding: 11px 18px;
+  position: absolute;
+  top: 343px;
+  left: 48px;
+}
+
+.product-hover.hover2
+{
+  left: 282px;
+}
+.product-hover.hover3
+{
+  left: 575px;
+}
+
+.product-hover.hover4
+{
+  left: 868px;
+}
+
+.product-hover:hover
+{
+  opacity: 1;
+}
+.product-hover:hover +.product .product-title span
+{
+  border: none;
 }
 
 .about-us
@@ -613,7 +1007,15 @@ input[value="toogle3"]:checked+label[for="toogle3"]
   font-weight: bold;
   color: #000;
 }
+.new-articles a:hover
+{
+  color: #e84d37;
+}
 
+.new-articles a:active
+{
+  color: #ff1d35;
+}
 .form-wrap
 {
   width: 550px;
@@ -627,6 +1029,7 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 {
   padding: 30px 21px 34px 21px;
   border-radius: 15px;
+  position: relative;
   background-color: #fff;
 }
 
@@ -635,17 +1038,37 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 {
   line-height: 22px;
 }
-.invitation input
+
+
+.email-messages input[type="email"]
 {
   box-sizing: border-box;
   width: 360px;
+  height: 44px;
   padding: 12px 15px;
   margin-top: 35px;
   margin-right: 9px;
-  border: 2px solid #d3d3d2;
+  border: 1px solid #d3d3d2;
   border-radius: 5px;
 }
 
+input[type="text"]+label,
+input[type="email"]+label,
+input[type="password"]+label,
+input[type="search"]+label
+{
+  position: absolute;
+  top: 115px;
+  left: 36px;
+  font-size: 11px;
+  line-height: 13px;
+  color: #5b9ddf;
+  opacity: 0;
+}
+input:focus+label
+{
+  opacity: 1;
+}
 .map
 {
   width: 1200;
@@ -731,12 +1154,14 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 {
   box-sizing: border-box;
   padding: 12px 15px;
-  border: 2px solid #d3d3d2;
+  border: 1px solid #d3d3d2;
   border-radius: 5px;
 }
+
 .form-feedback input:not(:last-of-type)
 {
   width: 270px;
+  height: 44px;
   margin-bottom: 20px;
 }
 .form-feedback textarea
@@ -745,6 +1170,23 @@ input[value="toogle3"]:checked+label[for="toogle3"]
   height: 155px;
   margin-bottom: 25px;
   resize: none;
+}
+
+.form-feedback input:not(.btn):hover,
+.form-feedback textarea:hover,
+ input[type="email"]:hover,
+ input[type="search"]:hover
+
+{
+  border: 2px solid #c7c6c5;
+}
+.form-feedback label[for="username"]
+{
+top: 53px;
+}
+.form-feedback label[for="usermail"]
+{
+top: 117px;
 }
 .form-feedback input[type="submit"]
 {
@@ -770,24 +1212,28 @@ input[value="toogle3"]:checked+label[for="toogle3"]
   background-color: #000;
 
 }
-.form-close::before
+.form-close::before,
+.component-close::before
 {
   transform: rotate(45deg);
 }
-.form-close::after
+.form-close::after,
+.component-close::after
 {
   transform: rotate(-45deg);
 }
-.form-close:hover
+.form-close:hover,
+.component-close:hover
 {
   background-color: #000;
 }
-.form-close:active
+.form-close:active,
+.component-close:active
 {
   opacity: 0.5;
 }
 .form-close:hover::before,
-.form-close:hover::after
+.form-close:hover::after,
 {
   background-color: #fff;
   height: 3px;

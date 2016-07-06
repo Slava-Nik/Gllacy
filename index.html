@@ -17,15 +17,71 @@
       </div>
       <nav class="main-navigation">
         <ul class="navigation-list">
-          <li><a href="#">Каталог</a></li>
+          <li class="catalog">
+            <a href="#">Каталог</a>
+            <ul class="catalog-menu">
+              <li><span>Новинки</span></li>
+              <li>Сливочное</li>
+              <li>Щербеты</li>
+              <li>Фруктовый лёд</li>
+              <li>Мелорин</li>
+            </ul>
+          </li>
           <li><a href="#">Доставка и оплата</a></li>
           <li><a href="#">О Компании</a></li>
         </ul>
       </nav>
       <div class="user-block">
-        <a class="search" href="#">Поиск</a><!--
-     --><a class="entrance" href="#">Вход</a><!--
-     --><a class="bucket" href="#">Корзина</a>
+        <ul class="user-tools">
+          <li class="tool-search">
+            <a class="search" href="#">Поиск</a>
+            <form class="form-search" action="#" method="get">
+            <input type="search" id="search" placeholder="Что ищем?">
+            <label for="search">Что ищем?</label>
+            </form>
+          </li><!--
+     --><li class="tool-enter">
+       <a class="entrance" href="#">Вход</a>
+       <form class="form-enter" action="post" method="post">
+         <input type="email" id="email1" placeholder="Электронная почта">
+         <label for="email1">Электронная почта</label>
+         <input type="password" id="password" placeholder="Пароль">
+         <label for=password>Пароль</label>
+         <a class="btn" href="#">Войти</a>
+         <div class="getting-password">
+           <a href="#">Забыли пароль?</a>
+           <a href="#">Новая регистрация</a>
+         </div>
+       </form>
+     </li><!--
+     --><li class="tool-bucket">
+          <a class="bucket" href="#">
+            <span class="empty-bucket">Пусто</span>
+            <span class="full-bucket">2 товара</span>
+          </a>
+          <form class="making-order" action="#" method="post">
+
+              <div class="component component1 clearfix">
+                <div class="component-close"></div>
+                <div class="component-picture"><img src="img/products/prod1.jpg" alt="1"></div>
+                <div class="component-name">Пломбир с апельсиновым джемом</div>
+                <div class="component-quantity">1,5 кг х <span>200 руб.</span></div>
+                <div class="component-price">300 руб.</div>
+              </div>
+
+              <div class="component component2 clearfix">
+                <div class="component-close"></div>
+                <div class="component-picture"><img src="img/products/prod3.jpg" alt="1"></div>
+                <div class="component-name">Клубничный пломбир с присыпкой из белого шоколада</div>
+                <div class="component-quantity">1,5 кг х <span>300 руб.</span></div>
+                <div class="component-price">450 руб.</div>
+              </div>
+
+            <div class="result-price">Итого: 750 руб.</div>
+            <a href="#" class="btn">Оформить заказ</a>
+          </form>
+        </li>
+      </ul>
         <div class="contacts">
           <p class="working-time">С 10 до 20, ежедневно</p>
           <p class="phone-number">8 812 450-25-25</p>
@@ -73,24 +129,37 @@
   </div>
 
   <section class="products">
+    <div class="product-hover hover1">
+      <a class="btn" href="#">Быстрый просмотр</a>
+    </div>
     <div class="product product1">
       <div class="image"><img src="img/products/prod1.jpg" alt="Тропическое мороженное"></div>
-      <h2 class="price">310<span>/кг</span></h2>
+      <div class="price">310<span>/кг</span></div>
       <p class="product-title"><span>Сливочное с апельсиновым джемом и цитрусовой стружкой</span></p>
+    </div>
+
+  <div class="product-hover hover2">
+      <a class="btn" href="#">Быстрый просмотр</a>
     </div>
     <div class="product product2">
       <div class="image"><img src="img/products/prod2.jpg" alt="Аппетитное кофейное мороженное"></div>
-      <h2 class="price">380<span>/кг</span></h2>
+      <div class="price">380<span>/кг</span></div>
       <p class="product-title"><span>Сливочно-кофейное с кусочками шоколада</span></p>
+    </div>
+    <div class="product-hover hover3">
+      <a class="btn" href="#">Быстрый просмотр</a>
     </div>
     <div class="product product3">
       <div class="image"><img src="img/products/prod3.jpg" alt="Гламурно-розовое ice-cream"></div>
-      <h2 class="price">355<span>/кг</span></h2>
+      <div class="price">355<span>/кг</span></div>
       <p class="product-title"><span>Сливочно-клубничное с присыпкой из белого шоколада</span></p>
+    </div>
+    <div class="product-hover hover4">
+      <a class="btn" href="#">Быстрый просмотр</a>
     </div>
     <div class="product product4">
       <div class="image"><img src="img/products/prod4.jpg" alt="Охлаждающее сливочное крем-брюле"></div>
-      <h2 class="price">415<span>/кг</span></h2>
+      <div class="price">415<span>/кг</span></div>
       <p class="product-title"><span>Сливочное крем-брюле с карамельной подливкой</span></p>
     </div>
   </section>
@@ -112,9 +181,10 @@
     </div>
     <div class="form-wrap">
     <form class="email-messages" action="#" method="post">
-      <label class="invitation">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)
-        <input type="email" placeholder="Электронная почта">
-      </label>
+      <div class="invitation">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</div>
+      <input type="email" id="email" placeholder="Электронная почта">
+      <label for="email">Электронная почта</label>
+
       <input class="btn" type="submit" value="Отправить">
       </form>
     </div>
@@ -135,8 +205,11 @@
 
 <form class="form-feedback hidden" action="#" method="post">
   <h2 class="feedback-title">Мы обязательно вам ответим!</h2>
-  <input type="text" class="user-name" placeholder="Как вас зовут?">
-  <input type="email" class="user-email" placeholder="Ваша почта для ответа?">
+
+  <input type="text" class="user-name" id="username" placeholder="Как вас зовут?">
+  <label for="username">Как вас зовут?</label>
+  <input type="email" class="user-email"  id="usermail" placeholder="Ваша почта для ответа?">
+  <label for="usermail">Ваша почта для ответа?</label>
   <textarea placeholder="Напишите что-нибудь..."></textarea>
   <input type="submit" class="btn" value="Отправить">
   <div class="form-close"></div>
