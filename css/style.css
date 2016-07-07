@@ -676,13 +676,13 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 .slider-item p
 {
   display: inline-block;
-
   max-width: 685px;
   margin: 0;
   font-size: 60px;
   line-height: 60px;
   font-weight: bold;
   color: #fff;
+  word-wrap:break-word;
 }
 .slide1
 {
@@ -705,10 +705,10 @@ input[value="toogle3"]:checked+label[for="toogle3"]
 
 .slider-btn
 {
-  display: inline-block;
+  float: right;
   min-width: 200px;
-  margin-left: 255px;
   margin-bottom: 40px;
+  margin-right: 435px;
   padding: 10px 40px;
   border-radius: 30px;
   font-size: 32px;
@@ -750,6 +750,7 @@ input[value="toogle3"]:checked+label[for="toogle3"]
   font-size: 35px;
   font-weight: bold;
   color: #fff;
+  word-wrap: break-word;
 }
 .action .action-content
 {
@@ -1233,7 +1234,7 @@ top: 117px;
   opacity: 0.5;
 }
 .form-close:hover::before,
-.form-close:hover::after,
+.form-close:hover::after
 {
   background-color: #fff;
   height: 3px;
