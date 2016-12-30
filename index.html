@@ -17,18 +17,18 @@
       </div>
       <nav class="main-navigation">
         <ul class="navigation-list">
-          <li class="catalog">
+          <li class="catalog main-item">
             <a href="#">Каталог</a>
             <ul class="catalog-menu">
-              <li><span>Новинки</span></li>
-              <li>Сливочное</li>
-              <li>Щербеты</li>
-              <li>Фруктовый лёд</li>
-              <li>Мелорин</li>
+              <li><a class="catalog-menu-item" href="#"><span>Новинки</span></a></li>
+              <li><a class="catalog-menu-item" href="catalog.html">Сливочное</a></li>
+              <li><a class="catalog-menu-item" href="#">Щербеты</a></li>
+              <li><a class="catalog-menu-item" href="#">Фруктовый лёд</a></li>
+              <li><a class="catalog-menu-item" href="#">Мелорин</a></li>
             </ul>
           </li>
-          <li><a href="#">Доставка и оплата</a></li>
-          <li><a href="#">О Компании</a></li>
+          <li class="main-item"><a href="#">Доставка и оплата</a></li>
+          <li class="main-item"><a href="#">О Компании</a></li>
         </ul>
       </nav>
       <div class="user-block">
@@ -57,8 +57,7 @@
      --><li class="tool-bucket">
           <a class="bucket" href="#">
             <span class="empty-bucket">Пусто</span>
-            <span class="full-bucket">2 товара</span>
-          </a>
+           </a>
           <form class="making-order" action="#" method="post">
 
               <div class="component component1 clearfix">
@@ -92,12 +91,12 @@
 
   <div class="slider clearfix">
     <div class="slider-toggles">
-      <input type="radio" name="slider" value="toogle1" id="toogle1" checked>
-      <label for="toogle1"></label>
-      <input type="radio" name="slider" value="toogle2" id="toogle2">
-      <label for="toogle2"></label>
-      <input type="radio" name="slider" value="toogle3" id="toogle3">
-      <label for="toogle3"></label>
+      <input type="radio" name="slider" value="toggle1" id="toggle1" checked>
+      <label for="toggle1" toggle="1"></label>
+      <input type="radio" name="slider" value="toggle2" id="toggle2">
+      <label for="toggle2" toggle="2"></label>
+      <input type="radio" name="slider" value="toggle3" id="toggle3">
+      <label for="toggle3" toggle="3"></label>
     </div>
 
     <div class="slider-item slide1">
@@ -203,7 +202,7 @@
   </section>
 </div>
 
-<form class="form-feedback hidden" action="#" method="post">
+<form class="form-feedback jump-animation hidden" action="#" method="post">
   <h2 class="feedback-title">Мы обязательно вам ответим!</h2>
 
   <input type="text" class="user-name" id="username" placeholder="Как вас зовут?">
@@ -233,8 +232,8 @@
     <p class="copyright-content">Сделано в <a href="https://htmlacademy.ru"><span>HTML Academy</span></a> © 2016</p>
   </div>
 </footer>
-<div class="overlay hidden"></div>
 </div>
+<div class="overlay hidden"></div>
 <script src="js/script.js"></script>
 </body>
 </html>

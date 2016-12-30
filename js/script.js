@@ -1,64 +1,72 @@
-var background=document.querySelector(".container");
-var toogle1=document.querySelector("label[for=toogle1]");
-var toogle2=document.querySelector("label[for=toogle2]");
-var toogle3=document.querySelector("label[for=toogle3]");
-var title1=document.querySelector(".slide1");
-var title2=document.querySelector(".slide2");
-var title3=document.querySelector(".slide3");
+var body = document.body;
+var container = body.querySelector(".container");
+var toggles = body.querySelector(".slider-toggles");
+var sliderItems = body.querySelectorAll(".slider-item");
+
+function changeSlide(event){
+  var elem = event.target;
+  var slideNum = Number( elem.getAttribute("toggle") );
+  body.className = "";
+  container.className = "container";
+ sliderItems.forEach(
+    function(elem){
+      elem.classList.add("hidden");
+  });
+
+  switch(slideNum){
+
+    case 1: {
+      body.classList.add("body-background1");
+      container.classList.add("background-slide1");
+      sliderItems[0].classList.remove("hidden");
+      break;
+    }
+
+    case 2: {
+      body.classList.add("body-background2");
+      container.classList.add("background-slide2");
+      sliderItems[1].classList.remove("hidden");
+      break;
+    }
+
+    case 3: {
+      body.classList.add("body-background3");
+      container.classList.add("background-slide3");
+      sliderItems[2].classList.remove("hidden");
+      break;
+    }
+  }
+}
+
+toggles.onclick = function(event){
+
+  if(! (event.target.getAttribute("toggle") ) ) return;
+  changeSlide(event);
+};
+
+
 var overlay=document.querySelector(".overlay");
 var form=document.querySelector(".form-feedback");
 var userName=form.querySelector(".user-name");
-var formOpen=document.querySelector(".adress-block a");
+var formOpen = document.querySelector(".adress-block a");
 var formClose=form.querySelector(".form-close");
 
-toogle1.addEventListener("click",function(event1) {
-  console.log("Клик по переключателю 1");
-  background.classList.remove("background-slide2");
-  background.classList.remove("background-slide3");
-  background.classList.add("background-slide1");
-  title2.classList.add("hidden");
-  title3.classList.add("hidden");
-  title1.classList.remove("hidden");
 
-});
+formOpen.addEventListener("click",function(event){
 
-toogle2.addEventListener("click",function(event2) {
-  console.log("Клик по переключателю 2");
-  background.classList.remove("background-slide1");
-  background.classList.remove("background-slide3");
-  background.classList.add("background-slide2");
-  title1.classList.add("hidden");
-  title3.classList.add("hidden");
-  title2.classList.remove("hidden");
-});
-
-toogle3.addEventListener("click",function(event3) {
-  console.log("Клик по переключателю 3");
-  background.classList.remove("background-slide1");
-  background.classList.remove("background-slide2");
-  background.classList.add("background-slide3");
-  title1.classList.add("hidden");
-  title2.classList.add("hidden");
-  title3.classList.remove("hidden");
-});
-
-formOpen.addEventListener("click",function(open)
-{
-  open.preventDefault();
+  event.preventDefault();
   overlay.classList.remove("hidden");
   form.classList.remove("hidden");
   userName.focus();
 });
 
-formClose.addEventListener("click",function(close1)
-{
+formClose.addEventListener("click",function(){
   form.classList.add("hidden");
   overlay.classList.add("hidden");
 });
 
-window.addEventListener("keydown",function(close2)
-{
-  if(close2.keyCode===27)
+window.addEventListener("keydown",function(event){
+  if(event.keyCode===27)
     {
       if(!form.classList.contains("hidden"))
       {
@@ -67,3 +75,5 @@ window.addEventListener("keydown",function(close2)
       }
     }
 });
+
+
