@@ -134,15 +134,15 @@ input[type="submit"]
   padding-top: 8px;
   padding-bottom: 8px;
   color: #000;
+  border-radius: 20px;
 }
 .catalog:hover > .catalog-wrap {
- border: none;
- border-radius: 20px;
  background-color: #fff;
  color: #000;
 }
 .catalog:hover .main-item-link {
   color: #000;
+  border: none;
 }
 
 
@@ -161,9 +161,10 @@ input[type="submit"]
 }
 
 
-.navigation-list li:not(.catalog):active {
+.navigation-list li:not(.catalog-menu-clause):not(.catalog):active {
   box-shadow: inset 0 2px 1px 0 #696969;
 }
+
 .catalog:active .catalog-wrap{
   box-shadow: inset 0 2px 1px 0 #696969;
 }
@@ -174,7 +175,6 @@ input[type="submit"]
 
 .catalog .catalog-menu{
   display: none;
-  min-width: 137px;
   padding: 11px 0;
   padding-bottom: 7px;
   position: absolute;
@@ -189,7 +189,7 @@ input[type="submit"]
   color: #000;
 }
 .catalog-menu li {
-  min-width: 105px;
+  min-width: 125px;
   margin: 0;
   padding: 0;
   line-height: 16px;
@@ -197,15 +197,19 @@ input[type="submit"]
   margin-bottom: 11px;
 }
 
+.catalog-menu li:not(:first-child){
+  width: 100%;
+}
 .catalog-menu li:first-child{
-  width: 114px;
   margin-left: 7px;
+  margin-right: 7px;
   margin-bottom: 4px;
   padding-left: 14px;
   padding-bottom: 18px;
   border-bottom: 1px solid #d1d0ce;
 }
-.catalog-menu li:nth-of-type(n+2) {
+.catalog-menu li:nth-of-type(n+2) a {
+  display: block;
   padding: 7px 0;
   padding-left: 21px;
   padding-right: 21px;
@@ -226,8 +230,7 @@ input[type="submit"]
   background-color: #f6b5a5;
 }
 
-.user-block
-{
+.user-block {
   padding-top: 22px;
   width: 269px;
   float: right;
@@ -250,12 +253,10 @@ input[type="submit"]
   font-size: 14px;
 }
 
-.user-tools .tool-bucket
-{
+.user-tools .tool-bucket{
   margin-right: 0;
 }
-.tool-search
-{
+.tool-search {
   display: block;
   width: 31px;
   height: 31px;
@@ -329,18 +330,15 @@ input[type="submit"]
   color: #fff;
   font-size: 14px;
 }
-.tool-enter .entrance
-{
+.tool-enter .entrance{
   text-decoration: none;
   color: #fff;
 }
-.tool-enter:hover .entrance
-{
+.tool-enter:hover .entrance{
   color: #000;
 }
 
-.tool-enter::before
-{
+.tool-enter::before{
   content: "";
   display: block;
   width: 21px;
@@ -350,19 +348,15 @@ input[type="submit"]
   left: 15px;
   background: url("../img/sprite.png") no-repeat -67px -5px;
 }
-.tool-enter:hover
-{
+.tool-enter:hovers{
   background-color: #fff;
   color: #000;
-
 }
-.tool-enter:hover::before
-{
+.tool-enter:hover::before{
   background-position: -98px -5px;
 }
 
-.tool-enter .form-enter
-{
+.tool-enter .form-enter{
   display: none;
   width: 241px;
   padding: 20px 17px 20px 19px;
@@ -372,10 +366,10 @@ input[type="submit"]
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 20px 20px 1px rgba(0,0,0,0.4);
+  z-index: 10;
 }
 
-.form-enter input
-{
+.form-enter input{
   box-sizing: border-box;
   width: 241px;
   height: 44px;
@@ -386,51 +380,42 @@ input[type="submit"]
   border-radius: 5px;
   font-size: 14px;
 }
-.form-enter .btn
-{
+.form-enter .btn {
   margin-right: 20px;
   float: left;
 }
 
-.form-enter .getting-password
-{
+.form-enter .getting-password {
   width: 130px;
   float: right;
   line-height: 24px;
 }
-.getting-password a
-{
+.getting-password a{
   color: #000;
   font-size: 13px;
 }
-.getting-password a:hover
-{
+.getting-password a:hover{
   color: #e84d37;
 }
-.getting-password a:active
-{
+
+.getting-password a:active{
   color: #ff4d37;
 }
-.form-enter label[for="email1"]
-{
+.form-enter label[for="email1"]{
   top: 3px;
   left: 35px;
 }
-.form-enter label[for="password"]
-{
+.form-enter label[for="password"]{
   top: 67px;
   left: 35px;
 }
-.form-enter input:active label
-{
+.form-enter input:active label{
   opacity: 1;
 }
-.tool-enter:hover .form-enter
-{
+.tool-enter:hover .form-enter{
   display: block;
 }
-.tool-bucket .bucket
-{
+.tool-bucket .bucket{
   display: block;
   width: 66px;
   min-height: 18px;
@@ -444,8 +429,7 @@ input[type="submit"]
   font-size: 14px;
 }
 
-.bucket::before
-{
+.bucket::before{
   content: "";
   display: block;
   width: 21px;
@@ -468,8 +452,6 @@ input[type="submit"]
 }
 
 
-
-
 .tool-bucket .making-order {
   display: none;
   width: 515px;
@@ -482,13 +464,13 @@ input[type="submit"]
   box-shadow: 0 20px 20px 1px rgba(0,0,0,0.4);
   background-color: #fff;
   overflow-y: auto;
+  z-index: 100;
 }
 .tool-bucket.full:hover .making-order{
   display: block;
 }
 
-.making-order .component
-{
+.making-order .component {
   width: 515px;
   position: relative;
   line-height: 16px;
@@ -496,8 +478,7 @@ input[type="submit"]
   color: #323232;
 }
 
-.component-picture
-{
+.component-picture{ 
   width: 33px;
   height: 33px;
   margin-left: 26px;
@@ -1357,14 +1338,12 @@ input[type="search"]:hover
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.footer-documents a:hover
-{
+.footer-documents a:hover{
   color: #ffbc9e;
   border-color: #a7a294;
 }
 
-.footer-documents a:active
-{
+.footer-documents a:active {
   color: #ffaa9e;
   border-color: #baa294;
 }
@@ -1444,11 +1423,25 @@ input[type="search"]:hover
 
 /*Каталог, вторая страница*/
 
+.catalog.current .catalog-wrap {
+  background-color: #d07058; 
+}
+.catalog.current .catalog-wrap a{
+  border: none;
+}
+.catalog.current:hover .catalog-wrap {
+  background-color: #fff;
+}
+.catalog-menu-clause.current a {
+  background-color: #d07058;
+}
 .breadcrumbs {
   font-size: 14px;
   opacity: 0.8;
   color: #fff;
 }
+
+
 .breadcrumbs .breadcrumbs-item {
   display: inline-block;
   position: relative;
@@ -1463,6 +1456,15 @@ input[type="search"]:hover
   position: absolute;
   left: -15px;
   font-size: 14px;
+}
+.breadcrumbs a:hover {
+  color: #ffbc9e;
+  border-color: #a7a294;
+}
+
+.breadcrumbs a:active {
+  color: #ffaa9e;
+  border-color: #baa294;
 }
 
 h1.product-title {
@@ -1524,12 +1526,28 @@ form.sort {
   position: absolute;
   top: -7px;
   background-color: #fff;
+  cursor: pointer;
 }
-
+.switcher.switcher-right {
+  left: 104px;
+}
+.price-strip .switcher:hover {
+  width: 21px;
+  height: 21px;
+  top: -8px;
+}
 
 .sort-fatness .sort-field {
   padding: 5px 0;
   padding-left: 30px;
+}
+.sort-field .sort-field-wrap{
+  display: inline-block;
+}
+.sort-field-wrap:hover .fatness-label::before{
+  top: -1px;
+  left: -12px;
+  border: 2.5px solid #fff;
 }
 .sort-fatness input {
   display: none;
@@ -1549,14 +1567,15 @@ form.sort {
   border-radius: 50%;
   border: 1.5px solid #fff;
 }
+
 .sort-fatness .fatness-label::after {
   content: "";
   display: none;
   width: 10px;
   height: 10px;
   position: absolute;
-  top: 4px;
-  left: -7px;
+  top: 4.5px;
+  left: -6.5px;
   border-radius: 50%;
   background-color: #fff;
 }
@@ -1663,6 +1682,13 @@ form.sort {
 .pagination .page:not(.active):hover {
  background-color: #a1b6aa;
 }
+.pagination .page:not(.active):active {
+ background-color: #fff;
+}
+.pagination .page:not(.active):active a{
+  color: #000;
+}
+
 .active a {
   color: #000;
 }

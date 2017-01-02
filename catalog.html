@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Gllacy-Shop</title>
+  <title>Gllacy-Catalog</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -19,16 +19,16 @@
         </div>
         <nav class="main-navigation">
           <ul class="navigation-list">
-            <li class="catalog main-item">
+            <li class="catalog main-item current">
               <div class="catalog-wrap">
                 <a class="main-item-link" href="#">Каталог</a>
               </div>
               <ul class="catalog-menu">
-                <li><a class="catalog-menu-item" href="#"><span>Новинки</span></a></li>
-                <li><a class="catalog-menu-item" href="catalog.html">Сливочное</a></li>
-                <li><a class="catalog-menu-item" href="#">Щербеты</a></li>
-                <li><a class="catalog-menu-item" href="#">Фруктовый лёд</a></li>
-                <li><a class="catalog-menu-item" href="#">Мелорин</a></li>
+                <li class="catalog-menu-clause"><a class="catalog-menu-item" href="#"><span>Новинки</span></a></li>
+                <li class="catalog-menu-clause current"><a class="catalog-menu-item" href="catalog.html">Сливочное</a></li>
+                <li class="catalog-menu-clause"><a class="catalog-menu-item" href="#">Щербеты</a></li>
+                <li class="catalog-menu-clause"> <a class="catalog-menu-item" href="#">Фруктовый лёд</a></li>
+                <li class="catalog-menu-clause"><a class="catalog-menu-item" href="#">Мелорин</a></li>
               </ul>
             </li>
             <li class="main-item"><a class="main-item-link" href="#">Доставка и оплата</a></li>
@@ -63,7 +63,6 @@
     <span class="full-bucket">2 товара</span>
   </a>
   <form class="making-order" action="#" method="post">
-
     <div class="component component1 clearfix">
       <div class="component-close"></div>
       <div class="component-picture"><img src="img/products/prod1.jpg" alt="1"></div>
@@ -93,16 +92,16 @@
 </div>
 </header>
 <ul class="breadcrumbs">
-  <li class="breadcrumbs-item"><a href="#">Главная</a></li>
-  <li class="breadcrumbs-item"><a href="#">Каталог</a></li>
-  <li class="breadcrumbs-item current-item"><a href="#">Сливочное</a></li>
+  <li class="breadcrumbs-item"><a href="index.html">Главная</a></li>
+  <li class="breadcrumbs-item"><a href="#catalog">Каталог</a></li>
+  <li class="breadcrumbs-item current-item"><span class="current">Сливочное</span></li>
 </ul>
 <h1 class="product-title">Сливочное мороженное</h1>
 
 <form class="sort" action="#" method="post">
 
   <div class="sort-item sort-type">
-  <label for="type">Сортировка:</label>
+    <label for="type">Сортировка:</label>
     <select class="sort-field" name="type" id="type" field>
       <option value="popular">По популярности</option>
       <option value="first-cheap">Сначала не дорогие</option>
@@ -111,31 +110,39 @@
     </select>
   </div>
 
-   <div class="sort-item sort-price">
-    <label>Цена: 100руб. - 500руб.</label>
+  <div class="sort-item sort-price">
+    <label>Цена: <span class="min-price">0</span>руб. - <span class="max-price">500</span>руб.</label>
     <div class="sort-field price-block">
       <div class="price-strip">
-        <div class="switcher switcher-left"></div>
-        <div class="switcher switcher-right"></div>
+        <div class="switcher switcher-left" state="left"></div>
+        <div class="switcher switcher-right" state="right"></div>
       </div>
     </div>
     
   </div>
-   <div class="sort-item sort-fatness">
+  <div class="sort-item sort-fatness">
     <label>Жирность:</label>
     <div class="sort-field">
+    <div class="sort-field-wrap">
       <input type="radio" value="0%" name="fatness" id="0%" checked>
       <label class="fatness-label" for="0%">0% </label>
+    </div>
+    <div class="sort-field-wrap">
       <input type="radio" value="till-10%" name="fatness" id="till-10%">
       <label class="fatness-label" for="till-10%">до 10%</label>
+    </div>
+    <div class="sort-field-wrap">
       <input type="radio" value="till-30%" name="fatness" id="till-30%">
       <label class="fatness-label" for="till-30%">до 30%</label>
+  </div>
+  <div class="sort-field-wrap">
       <input type="radio" value="more-30%" name="fatness" id="more-30%">
       <label class="fatness-label" for="more-30%">выше 30%</label>
-   </div>
-   </div>
+</div>
+    </div>
+  </div>
 
-    <div class="sort-item sort-addition">
+  <div class="sort-item sort-addition">
     <label>Наполнители:</label>
     <div class="sort-field">
       <input type="checkbox" id="chocolate">
@@ -148,123 +155,123 @@
       <label class="addition-label" for="sirops">Сиропы</label>
       <input type="checkbox" id="jams">
       <label class="addition-label" for="jams">Джемы</label>
-   </div>
-   </div>
-   <button id="accept">Применить</button>    
+    </div>
+  </div>
+  <button id="accept">Применить</button>    
 
 </form>
 
 <section class="products catalog-products">
-    <div class="product-hover hover1">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product1">
-      <div class="image"><img src="img/products/prod1.jpg" alt="Тропическое мороженное"></div>
-      <div class="price">310<span>/кг</span></div>
-      <p class="product-title"><span>Сливочное с апельсиновым джемом и цитрусовой стружкой</span></p>
-    </div>
+  <div class="product-hover hover1">
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product1">
+    <div class="image"><img src="img/products/prod1.jpg" alt="Тропическое мороженное"></div>
+    <div class="price">310<span>/кг</span></div>
+    <p class="product-title"><span>Сливочное с апельсиновым джемом и цитрусовой стружкой</span></p>
+  </div>
 
   <div class="product-hover hover2">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product2">
-      <div class="image"><img src="img/products/prod2.jpg" alt="Аппетитное кофейное мороженное"></div>
-      <div class="price">380<span>/кг</span></div>
-      <p class="product-title"><span>Сливочно-кофейное с кусочками шоколада</span></p>
-    </div>
-    <div class="product-hover hover3">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product3">
-      <div class="image"><img src="img/products/prod3.jpg" alt="Гламурно-розовое ice-cream"></div>
-      <div class="price">355<span>/кг</span></div>
-      <p class="product-title"><span>Сливочно-клубничное с присыпкой из белого шоколада</span></p>
-    </div>
-    <div class="product-hover hover4">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product4">
-      <div class="image"><img src="img/products/prod4.jpg" alt="Охлаждающее сливочное крем-брюле"></div>
-      <div class="price">415<span>/кг</span></div>
-      <p class="product-title"><span>Сливочное крем-брюле с карамельной подливкой</span></p>
-    </div>
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product2">
+    <div class="image"><img src="img/products/prod2.jpg" alt="Аппетитное кофейное мороженное"></div>
+    <div class="price">380<span>/кг</span></div>
+    <p class="product-title"><span>Сливочно-кофейное с кусочками шоколада</span></p>
+  </div>
+  <div class="product-hover hover3">
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product3">
+    <div class="image"><img src="img/products/prod3.jpg" alt="Гламурно-розовое ice-cream"></div>
+    <div class="price">355<span>/кг</span></div>
+    <p class="product-title"><span>Сливочно-клубничное с присыпкой из белого шоколада</span></p>
+  </div>
+  <div class="product-hover hover4">
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product4">
+    <div class="image"><img src="img/products/prod4.jpg" alt="Охлаждающее сливочное крем-брюле"></div>
+    <div class="price">415<span>/кг</span></div>
+    <p class="product-title"><span>Сливочное крем-брюле с карамельной подливкой</span></p>
+  </div>
 
 
 
-    <div class="product-hover hover5">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product5">
-      <div class="image"><img src="img/products/prod5.jpg" alt="Брусничное"></div>
-      <div class="price">325<span>/кг</span></div>
-      <p class="product-title"><span>Сливочное с брусничным джемом</span></p>
-    </div>
+  <div class="product-hover hover5">
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product5">
+    <div class="image"><img src="img/products/prod5.jpg" alt="Брусничное"></div>
+    <div class="price">325<span>/кг</span></div>
+    <p class="product-title"><span>Сливочное с брусничным джемом</span></p>
+  </div>
 
   <div class="product-hover hover6">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product6">
-      <div class="image"><img src="img/products/prod6.jpg" alt="Черничное"></div>
-      <div class="price">410<span>/кг</span></div>
-      <p class="product-title"><span>Сливочно-черничное с цельными ягодами черники </span></p>
-    </div>
-    <div class="product-hover hover7">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product7">
-      <div class="image"><img src="img/products/prod7.jpg" alt="Лимонное с присыпкой"></div>
-      <div class="price">375<span>/кг</span></div>
-      <p class="product-title"><span>Сливочно-лимонное с карамельной присыпкой</span></p>
-    </div>
-    <div class="product-hover hover8">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product8">
-      <div class="image"><img src="img/products/prod8.jpg" alt="С шоколадной стружкой"></div>
-      <div class="price">320<span>/кг</span></div>
-      <p class="product-title"><span>Сливочное с шоколадной стружкой</span></p>
-    </div>
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product6">
+    <div class="image"><img src="img/products/prod6.jpg" alt="Черничное"></div>
+    <div class="price">410<span>/кг</span></div>
+    <p class="product-title"><span>Сливочно-черничное с цельными ягодами черники </span></p>
+  </div>
+  <div class="product-hover hover7">
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product7">
+    <div class="image"><img src="img/products/prod7.jpg" alt="Лимонное с присыпкой"></div>
+    <div class="price">375<span>/кг</span></div>
+    <p class="product-title"><span>Сливочно-лимонное с карамельной присыпкой</span></p>
+  </div>
+  <div class="product-hover hover8">
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product8">
+    <div class="image"><img src="img/products/prod8.jpg" alt="С шоколадной стружкой"></div>
+    <div class="price">320<span>/кг</span></div>
+    <p class="product-title"><span>Сливочное с шоколадной стружкой</span></p>
+  </div>
 
 
-<div class="product-hover hover9">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product9">
-      <div class="image"><img src="img/products/prod9.jpg" alt="Ванильное с кусочками шоколада"></div>
-      <div class="price">440<span>/кг</span></div>
-      <p class="product-title"><span>Сливочно-ванильное с кусочками шоколада</span></p>
-    </div>
+  <div class="product-hover hover9">
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product9">
+    <div class="image"><img src="img/products/prod9.jpg" alt="Ванильное с кусочками шоколада"></div>
+    <div class="price">440<span>/кг</span></div>
+    <p class="product-title"><span>Сливочно-ванильное с кусочками шоколада</span></p>
+  </div>
 
   <div class="product-hover hover10">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product10">
-      <div class="image"><img src="img/products/prod10.jpg" alt="С ментоловым сиропом"></div>
-      <div class="price">435<span>/кг</span></div>
-      <p class="product-title"><span>Сливочноe с ментоловым сиропом</span></p>
-    </div>
-    <div class="product-hover hover11">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product11">
-      <div class="image"><img src="img/products/prod11.jpg" alt="С кусочками чёрного шоколада"></div>
-      <div class="price">355<span>/кг</span></div>
-      <p class="product-title"><span>Сливочное с кусочками черного шоколада</span></p>
-    </div>
-    <div class="product-hover hover12">
-      <a class="btn" href="#">Быстрый просмотр</a>
-    </div>
-    <div class="product product12">
-      <div class="image"><img src="img/products/prod12.jpg" alt="С мятным сиропом"></div>
-      <div class="price">420<span>/кг</span></div>
-      <p class="product-title"><span>Сливочное с мятным сиропом</span></p>
-    </div>
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product10">
+    <div class="image"><img src="img/products/prod10.jpg" alt="С ментоловым сиропом"></div>
+    <div class="price">435<span>/кг</span></div>
+    <p class="product-title"><span>Сливочноe с ментоловым сиропом</span></p>
+  </div>
+  <div class="product-hover hover11">
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product11">
+    <div class="image"><img src="img/products/prod11.jpg" alt="С кусочками чёрного шоколада"></div>
+    <div class="price">355<span>/кг</span></div>
+    <p class="product-title"><span>Сливочное с кусочками черного шоколада</span></p>
+  </div>
+  <div class="product-hover hover12">
+    <a class="btn" href="#">Быстрый просмотр</a>
+  </div>
+  <div class="product product12">
+    <div class="image"><img src="img/products/prod12.jpg" alt="С мятным сиропом"></div>
+    <div class="price">420<span>/кг</span></div>
+    <p class="product-title"><span>Сливочное с мятным сиропом</span></p>
+  </div>
 
 
-  </section>
+</section>
 
 <ul class="pagination">
-  
+
   <li class="previous-page">
     <a href="#"></a>
   </li>
@@ -300,6 +307,15 @@
   </div>
 </footer>
 
-<!-- <script src="js/script.js"></script> -->
+<script src="js/switcher.js"></script>
+
+<script>
+var switcher = document.querySelector(".sort-price");
+
+ Switcher({elem: switcher,max: 1000});
+
+ switcher.addEventListener("slide", changeValue);
+</script>
+
 </body>
 </html>
