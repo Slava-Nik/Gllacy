@@ -1484,7 +1484,7 @@ form.sort {
   margin-right: 10px;
 }
 .sort-item:first-of-type {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 .sort label {
   display: block;
@@ -1501,12 +1501,36 @@ form.sort {
   color: #fff;
   outline: none;
 }
+.sort-type .sort-field {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  z-index: 1000;
+}
+.sort-type-wrapper {
+  position: relative;
+}
+.sort-type-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  border: 4px solid #fff;
+  border-bottom-width: 0;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+
 .sort-type {
   width: 210px;
 }
-.sort-type .sort-field:hover {
+.sort-type-wrapper:hover .sort-field {
   background-color: #fff;
   color: #000;
+}
+.sort-type:hover .sort-type-wrapper::before{
+  border-top-color: #000;
 }
 
 .price-block {
